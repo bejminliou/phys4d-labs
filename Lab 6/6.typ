@@ -1,0 +1,195 @@
+#import "@preview/mitex:0.2.5": *
+
+#let full_width_figure(img_src, caption_text) = {
+  figure(
+    placement: auto,
+    scope: "parent",
+    image(img_src),
+    kind: "Figure",
+    supplement: [Figure],
+    // caption: caption_text,
+    caption: text(caption_text, size: 9pt)
+  )
+}
+
+// --- Math Definitions ---
+
+#let clrblue(x) = text(fill: blue, $#x$);
+#let clrred(x) = text(fill: red, $#x$);
+
+// --- Title & Abstract & Metadata ---
+
+#let title = [Lab 6: The Franck-Hertz Effect];
+
+#let abstract = [
+  This experiment investigates excitation energies of different filament materials. 
+  
+  2 experimental setups measured current for argon and voltage for neon at varying voltages,
+  plotted on a graph to measure peak-to-peak differences. These peak-to-peak voltages were measured to be 
+  20 +- 2 for peaks of neon, 22 +- 0 for valleys for neon. t' of these is 1, signifying agreement within the uncertainty. 
+
+  Argon showed 11.7 +-0.3 for peaks, 11.6 +- 0.2 for valleys, t' of 0.3 signifying agreement within the uncertainty.      
+
+];
+
+#let names = ("Benjamin Liou", "Aiden Man", "Nathan Nguyen");
+
+// --- Formatting ---
+
+// HEADER (top right corner)
+#set page(
+  paper: "us-letter",
+  header: align(right + horizon, title),
+  numbering: "1",
+  columns: 2,
+)
+
+#place(
+  top + center,
+  float: true,
+  scope: "parent",
+  clearance: 2em,
+)[
+  #align(center, text(17pt)[ * #title * ])
+
+  #grid(
+    columns: (1fr, 1fr, 1fr),
+    ..names.map(name => align(center)[#name]),
+  )
+
+  #par(justify: false)[
+    #abstract
+  ]
+]
+
+#show heading: it => block(width: 100%)[
+  #set text(weight: "regular")
+  #smallcaps(it.body)
+]
+
+// --- Body ---
+
+= 1. Background
+In 1914, James Franck and Gustav Hertz confirmed Bohr's theorized quantized energy levels in atoms. Their experiment directed current through a vacuum tube with low-pressure vaporized mercury, which affected the detected current. However, this observed effect only occured at certain electron energies, later recognized to be a representation of the excitation energies of the electrons bound to mercury. Below this threshold, the interactions between electrons and mercury behave like elastic collisions, where the electrons retain most of their kinetic energy after the collision. Above this threshold, the interactions between free electrons and mercury behave more like inelastic collisions. When an electron has kinetic energy greater than or equal to the excitation energy of mercury, the kinetic energy from the electron raises one of mercury's electrons to the next energy level, resulting in a decreased current (an electron with exactly the excitation energy would collide and have a final velocity of zero). As the kinetic energies of the free electrons increase (or as voltage increases), series of peaks and valleys will be observed when plotting the observed current against voltage. This series of peaks and valleys is due to the multiple inelastic collisions that can occur at higher electron energies. 
+
+= 2. Theory
+
+Plotting observed current against voltage for this experiment will yields a series of peaks and valleys, where the spacing between peaks (local maxima) and between valleys (local minima) correspond to the excitation energy of the interacting gas. A linear regression performed on the plot of the voltage at these peak voltages and the peak numbers (the order at which peaks occur) will provide an average voltage difference between peaks as a slope:
+
+#mitex(`
+V_p =  c \cdot n + b
+`)
+
+$V_p$ is the peak voltage, $n$ is the peak number, and $c$ is the slope, representing the average voltage difference between peaks, $b$ is some arbirary intercept. This procedure can likewise be applied to valleys. 
+
+By measuring the energy of the electrons in electron-volts (eV), the induced kinetic energy of each electron is equal to 1 electron-volt per volt measured. This means the value of the average voltage difference between peaks directly corresponds to the average energy difference between peaks in electron-volts. Thus, multiplying the elementary charge by the slope c yields the equation: 
+
+#mitex(`
+K_e = 1e \cdot c
+`)
+
+$K_e$ represents the exication in energy in electron-volts. 
+Mismatch between experimental and expected values for $K_e$ may occur due to the atom's cross-section (odds of interacting with an electron). At the energies examined in the Frank-Hertz experiment, the cross-sections for the 4.9eV excitation are about ten times larger than those of the 4.7eV excitation. Thus, there is a greater likelyhood of electrons achieving the 4.9eV inelastic collision as opposed to the 4.7eV counterpart.
+
+= 3. Experiment
+Two experimental setups were used for analyzing argon and neon separately.
+
+== 3a. Argon
+
+The entire setup was in a self-contained box, where the left side was a pair of meters that measure current and voltage and the right side was an array of knobs and switches. On the top row of dials and switches, the manual/auto switch was set to manual, the filament voltage dial set to $3.5V$ and the current multiplier set to $10^"-9"$. The second row of switches and dials controlled the various voltages in the circuit, with the far left switch controlling the voltage being set. Starting with the switch positioned to the left, this first voltage (to move the electrons away from the filament) was set to 1.5 volts. The switch in the middle position sets the unfortunately named "retarding voltage," and was set to 7.5 volts. The switch in the right position controls the grid voltage, otherwise known as the accelerating voltage. 
+
+The procedure measuring currents at varying grid voltages was as follows: the grid voltage was increased at two-volt increments from 0 volts, with each point recorded as a pair of currents and voltages up to 80 volts. Before taking data, the electronics must be allowed to warm up. When adjusting the grid voltage, a 5 second wait time was allowed for the current to settle. The current multiplier was also adjusted throughout the experiment to account for the wide range in current readings. 
+
+== 3b. Neon
+
+The experimental setup for the Franck-Hertz experiment with neon consisted of three main components: a neon-filled vacuum tube, an instrument box that functioned as the power supply and control panel, and a digital oscilloscope. The vacuum tube was connected to the instrument box using five color-coded banana plug cables, and a BNC cable ran from the top of the tube to a corresponding connector on the upper-left section of the panel. The signal output, located on the upper-right panel, was connected to the oscilloscope using another BNC cable. To plot the signal voltage against the grid voltage, the oscilloscope was placed in XY display mode. In this mode, the voltage from channel one (X-axis) represented the grid voltage, while the voltage from channel two (Y-axis) represented the signal voltage.At the beginning of the experiment, the mode selector switch on the instrument box was set to RAMP/60Hz. The filament voltage was set to about 8 volts. Proper heating was confirmed by observing an orange glow in the filament (the filament must not appear too bright or too dull). Once the filament had warmed up, the reverse bias (retarding voltage) was set to around 4 volts. Experimenting with different values between the filament voltage, the retarding voltage, and the amplifier gain, eventually a series of settings was selected for the data being collected (a few seconds were needed after any adjustments due to thermal response lag in the filament). 
+
+Because the oscilloscope could not directly save data in XY mode, it was temporarily switched to YT mode to record both waveforms (both must be visible to save). The resulting CSV file was later processed to reconstruct the XY display by plotting the signal voltage against the grid voltage.
+
+= 4. Data, Results, and Analysis
+The neon data plots signal voltage against grid voltage, whereas the data for argon plots current against voltage. Because of the proportionality of voltage to current via Ohm's Law ($V = I R$), peaks and valleys in both plots equivalently measure the relative electron energies following interaction with the materials. Thus, the peak/valley voltages for both gases can similarly be measured at specific grid voltages. Within each distinct section of local extrema, the absolute peaks and valleys of each section were used to generate a plot for each peak and valley against its corresponding order number (peak number), yielding the following graphs: 
+
+#full_width_figure("argon_voltage_vs_peak.svg", [Grid Voltage ($V_G$) as a function of Peak Number. The solid line represents the linear best fit to the experimental data points. The equation of the fit and the $R^2$ value are as shown on the graph.]);
+
+#full_width_figure("neon_voltage_vs_peak.svg", [Grid Voltage ($V_G$) as a function of Peak Number. The solid line represents the linear best fit to the experimental data points. The equation of the fit and the $R^2$ value are as shown on the graph.]);
+
+
+A linear regression analysis was performed on graphs comparing peak values and peak numbers, or valley values and valley numbers, the slope of which represents the excitation energy of the corresponding material. For argon, the slope was $11.7 plus.minus 0.3V$ for the peaks, and $11.6 plus.minus 0.2V$ for the valleys. For neon, the slope was $20 plus.minus 2V$ for the peaks, and $21.8 plus.minus 0.1V$ for the valleys. Conducting t'-scores for comparing peaks and valleys within each material yielded a t'-score of 0.277 for argon and 0.899 for neon, signifying agreement within the uncertainty between each set of measurements. 
+
+According to NIST (National Institue of Standards and Technology) Atomic Spectra Database Levels Form, the lowest level argon configurations are as follows (with $3s^2 3p^6$ set to 0eV): 
+
+#table(
+  columns: 4,
+  align: (left),
+  stroke: 0pt,
+  inset: 4pt,
+
+  table.header(
+    [*Configuration*], [*Term*], [*J*], [*Level (eV)*], 
+  ),
+  [$3s^2 3p^5 (""^"2"P degree _"3/2") 4s$], [ $""^2[frac(3, 2)] degree$], [2 \ 1], [11.548eV \ 11.624eV],
+  [$3s^2 3p^5 (""^"2"P degree _"1/2") 4s$], [ $""^2[frac(1, 2)] degree$], [0 \ 1], [11.723eV \ 11.828eV]   
+)
+
+The lowest neon configurations are as follows (with $2s^2 2p^6$ set to 0eV):
+
+#table(
+  columns: 3,
+  align: (center),
+
+  stroke: 0pt,
+  inset: 4pt,
+
+  table.header(
+    [*Configuration*], [*J*], [*Level (eV)*], 
+  ),
+  [$2s^2 2p^5 (""^"2" P degree _"3/2" ) 3s$], [2 \ 1], [16.619eV \ 16.671eV],
+  [$2s^2 2p^5 (""^"2" P degree _"1/2" ) 3s$], [0 \ 1], [16.715eV \ 16.848eV]   
+)
+
+For argon, 
+The strongest agreement for the peak values was exhibited in $3s^2 3p^5 (""^"2" P degree _"1/2" )4s$ for J = 0 with a level of 11.723eV. 
+The strongest agreement for the valley values was exhibited in $3s^2 3p^5 (""^"2"P degree _"3/2") 4s$ for J = 1 with a level of 11.624eV. 
+
+The lowest level is 11.548eV, holding a t'-score of 0.507 with the peaks and 0.260 with the valleys. Both of these t'-scores indicate agreement within the standard error. 
+
+
+
+For neon
+The strongest agreement for the peak values was exhibited at $2s^2 2p^5 (""^2 P degree _"1/2") 20d$ and J = 1, with a level 21.627 eV.  
+
+Strongest agreement for the valley values was exhibited at $2s^2 2p^5 (""^2 P degree _"3/2") 3d$ and J = 1, with a level of 20.025 eV. 
+
+The lowest level is 16.619eV, holding a t'-score of 1.69 for the peaks and 51.81 for the valleys. 
+
+
+
+//fixmeeeeeee
+
+#colbreak()
+
+= 5. Conclusion
+
+Somethign
+#colbreak()
+
+= References
+
+#let reference_entry(url, title, source) = {
+  [#source. "#title". #link(url)]
+}
+
+#set par(hanging-indent: 2em)
+
+#reference_entry(
+  "https://physics.nist.gov/PhysRefData/ASD/levels_form.html",
+  "NIST Atomic Spectra Database Levels Form",
+  "National Institute of Standards and Technology"
+)
+
+#reference_entry(
+  "https://foothillcollege.instructure.com/courses/32770/assignments/1007400?module_item_id=2917883",
+  "Franck-Hertz",
+  "David Marasco, Foothill College"
+)
+
