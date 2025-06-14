@@ -106,13 +106,14 @@ The initial data was collected using the manual method, where ring diameters wer
 #full_width_figure("Theta 2 vs. Theta 1(1).svg", [Diffraction angle $theta$ vs. inverse square root of voltage for Method 1 (Manual Marking).]);
 
 To mitigate these errors, a second set of data was collected using image analysis. Figure 2 shows the corresponding plot for this improved method. The data exhibits less scatter and better linearity, particularly for the inner ring. Following the same analysis, the slopes 
-$2.8 plus.minus 0.2 (V)^"1/2"$ for $theta _1$ and $4.9 plus.minus 0.4 (V)^"1/2"$ for $theta _2$ result in the values for Planck's constant being $h_1 = (6.4 plus.minus 0.5) dot 10^(-34) " J s"$ and $h_2 = (6.6 plus.minus 0.6) dot 10^(-34) " J s"$. The corresponding t'-scores were 0.46 and 0.04, respectively. Since both scores are well below 1, they indicate agreement within the uncertainty between these experimental results and the accepted value. This quantitative comparison confirms that the image analysis technique is a more reliable and accurate method for this experiment.
+$2.8 plus.minus 0.2 (V)^"1/2"$ for $theta _1$ and $4.9 plus.minus 0.4 (V)^"1/2"$ for $theta _2$
+ the values for Planck's constant were determined to be $h_1 = (6.4 plus.minus 0.5) dot 10^(-34) " J s"$ and $h_2 = (6.6 plus.minus 0.6) dot 10^(-34) " J s"$. The corresponding t'-scores were 0.46 and 0.04, respectively. Since both scores are well below 1, they indicate agreement within the uncertainty between these experimental results and the accepted value. This quantitative comparison confirms that the image analysis technique is a more reliable and accurate method for this experiment.
 
 #full_width_figure("Theta 2 vs. Theta 1(2).svg", [Diffraction angle $theta$ vs. inverse square root of voltage for Method 2 (Image Analysis).]);
 
 // The data follows the expected linear trend. According to the derived relationship, the slope of the line in Figure 1 is equal to $h / (2d sqrt(2 e m))$. While this slope can be used to solve for $h$, a more direct method was used to find $h$ and its associated uncertainty. A linear regression was performed on the transformed data, plotting $2 d theta$ versus $(2 e m V)^(-1/2)$, where the slope of the line corresponds directly to $h$. This analysis was performed for both the inner and outer ring data sets.
 
-// #colbreak()
+#colbreak()
 
 = Discussion
 The experimental results demonstrate a successful measurement of Planck's constant using electron diffraction. The image analysis method yielded values for $h$ that are in excellent statistical agreement with the accepted value, while the manual method proved to be less reliable. The key to this improvement was the reduction of procedural uncertainties. The manual method suffered from at least two major sources of human error: parallax error while marking the ring positions on a curved screen, and measurement error when using a ruler on the removed tape. The image analysis method mitigated these by creating a fixed reference frame (the ticks on the tape) and by delegating the measurement to software, which provides sub-pixel precision and objectivity.
