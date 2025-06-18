@@ -24,15 +24,7 @@
 #let title = [Lab 6: The Franck-Hertz Effect];
 
 #let abstract = [
-
-  This experiment plots current and voltage as current is run through a 2 materials: argon and neon. 
-  2 separate experimental setups measured current for argon and signal voltage for neon at varying grid voltages. The data was then
-  plotted on a graph to measure peak-to-peak and valley-to-valley differences. Plotting peaks and valleys against their respective order number, 
-  argon showed a slope of $11.7 plus.minus 0.3V$ for peaks, $11.6 plus.minus 0.2V$ for valleys, t' of 0.3 signifying agreement between each within the uncertainty between the experimental sets. For neon, these peak-to-peak voltages were measured to be $20 plus.minus 2V$, and the valley-to-valley voltages $21.8 plus.minus 0.1V$ for neon. t'-score between these slopes is 0.899, signifying agreement within the uncertainty. 
-
-
-Peak-to-peak and valley-to-valley on the lowest energy level for argon yielded a t'score of resulting in a t'-score of 0.507 with the peaks and 0.260 with the valleys. 
-Peak-to-peak and valley-to-valley on the lowest energy level for argon yielded
+ 2 separate experimental setups measured current through argon and signal voltage across neon at varying grid voltages. The data for each was plotted against grid voltage to measure peak-to-peak and valley-to-valley differences in grid voltage. Plotting peak/valley voltages against their respective order numbers, the experimental slopes for argon were found to be $11.7 plus.minus 0.3V$ for peaks and $11.6 plus.minus 0.2V$ for valleys. For neon, the slopes were found to be $20 plus.minus 2V$ for peaks and $21.8 plus.minus 0.1V$ for valleys. The t'-scores between peak and valley slopes for each material are 0.277 and 0.899 respectively, signifying agreement within each set of slopes. Comparing peak-to-peak and valley-to-valley differences on the lowest energy level for argon yielded t'scores of 0.507 and 0.260 respectively, indicating agreement between the argon data and theory. Comparing peak-to-peak and valley-to-valley differences to the lowest energy level for neon yielded t'-scores of 1.69 and 51.81 respectively, indicating inconclusivity and disagreement between the neon data and theory. 
 ];
 
 #let names = ("Benjamin Liou", "Aiden Man", "Nathan Nguyen");
@@ -135,7 +127,7 @@ The neon data plots signal voltage against grid voltage, whereas the data for ar
   ),
 )
 
-A linear regression analysis was performed on each graph comparing peak values and peak numbers, or valley values and valley numbers, the slope of which represents the excitation energy of the corresponding material. For argon, the slope was $11.7 plus.minus 0.3V$ for the peaks, and $11.6 plus.minus 0.2V$ for the valleys, corresponding to excitation energy levels of $11.7 plus.minus 0.3"eV"$ for the peaks, and $11.6 plus.minus 0.2"eV"$ for the valleys. For neon, the slope was $20 plus.minus 2V$ for the peaks, and $21.8 plus.minus 0.1V$ for the valleys, corresponding to excitation energy levels of $20 plus.minus 2"eV"$ for the peaks, and $21.8 plus.minus 0.1"eV"$ for the valleys. Conducting t'-scores for comparing peaks and valleys within each material yielded a t'-score of 0.277 for argon and 0.899 for neon. These t'-scores being less than 1 signifies agreement within the uncertainty, within each set of measurements. 
+A linear regression analysis was performed on each graph comparing peak values and peak numbers, or valley values and valley numbers, the slope of which represents the excitation energy of the corresponding material. For argon, the slope was $11.7 plus.minus 0.3V$ for the peaks, and $11.6 plus.minus 0.2V$ for the valleys, corresponding to excitation energy levels of $11.7 plus.minus 0.3"eV"$ for the peaks, and $11.6 plus.minus 0.2"eV"$ for the valleys. For neon, the slope was $20 plus.minus 2V$ for the peaks, and $21.8 plus.minus 0.1V$ for the valleys, corresponding to excitation energy levels of $20 plus.minus 2"eV"$ for the peaks, and $21.8 plus.minus 0.1"eV"$ for the valleys. Conducting t'-scores for comparing peaks and valleys within each material yielded a t'-score of 0.277 for argon and 0.899 for neon. These t'-scores being less than 1 signifies agreement within each set of measurements. 
 
 According to NIST (National Institue of Standards and Technology) Atomic Spectra Database Levels Form, the lowest level argon configurations are as follows (with $3s^2 3p^6$ at 0eV): 
 
@@ -174,11 +166,9 @@ For neon, the strongest agreement for the peak values was exhibited at $2s^2 2p^
 
 = 5. Conclusion
 
-The t'scores for argon comparing the data to the lowest energy levels show agreement within the uncertainty, verifying the results of the Franck-Hertz experiment and Bohr's theory of quantized energy levels. However, the t'-scores for neon comparing the data to the lowest energy levels signify inconclusiveness and disagreement. 
+The t'scores for argon comparing the data to the lowest energy levels show agreement within the uncertainty, verifying the results of the Franck-Hertz experiment and Bohr's theory of quantized energy levels. However, the t'-scores for neon comparing the data to the lowest energy levels signify inconclusiveness and disagreement. Though the influence of atomic cross-sections and collision likelyhood for certain excitation energy levels could apply to neon, it would still imply that the values should reflect those still in the lower energy levels. However, the experimental values for neon agree strongest with energy levels, far above the lowest energy configurations. In further analyzing the neon data, the t'scores could be attributed to the deficit in the number of data points. The neon dataset consists 3 peaks and 3 valleys, constructing each line of best fit from only 3 points. This data set contains approximately half of those in the argon dataset, with 6 peaks and 5 valleys. This shortage in data can allow coincidentally linear data to pose small uncertainties on incorrect slope values, massively skewing the resulting t'-score toward disagreement.  
 
-Though the idea behind the atomic cross section can apply to neon, which would imply that the observed excitation energies would not necessarily match the lowest, it would still imply that the values should reflect those in the lower energy levels. However, the energy values of neon are instead agree  strongest with energy levels far above the lowest energy configurations. In further analyzing the neon data, the t'scores could be attributed to the deficit in the number of data points in the neon data. The neon dataset consists 3 peaks and 3 valleys, constructing each line of best fit from only 3 points. This data set contains approximately half of those form the argon dataset, with 6 peaks and 5 valleys. This shortage in data can allow coincidentally linear data to pose small uncertainties on incorrect slope values, massively influencing hte resulting t'-score.  
-
-which can massively reduce the uncertainty based on coincidence. To improve this data, the fine tuning could be refined, and the experimental setup can use more algorithmic methods of setting 
+To improve data collection for the neon experimental setup, the fine tuning on the oscilloscope could be refined such that the visualizer contains at least 4 peaks and valleys. This could further be improved by using more specific methods of assigning settings, making data collection more consistent and robust. 
 
 
 #colbreak()
