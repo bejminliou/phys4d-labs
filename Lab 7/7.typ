@@ -23,6 +23,10 @@
 
 #let abstract = [
 //fixme
+Two experimental setups: one analyzing the effects distance on radioactivity for different decay types, one radioactive dating cobalt-60. 
+Activity was measured at varying distances for strontium-90, cobalt-60, and polonium-210. Linearizing the data by plotting ln(radioactivity) against ln(r) generates slopes of 
+of $-2.37 plus.minus 0.03$, $-2.03 plus.minus 0.07$, and $3 plus.minus 1$ respectively. Compared to the 
+slopes were calculated to be (), with a t'-score of (). 
 ];
 
 #let names = ("Benjamin Liou", "Aiden Man", "Nathan Nguyen");
@@ -64,80 +68,92 @@
 
 = 1. Background
 
-Radioactive decay is a fundamental process in nuclear physics where atomic nuclei decay into more stable configurations. 
+Radioactive decay is a process in nuclear physics where atomic nuclei decay into more stable configurations. There are 3 main types of decay: alpha decay, beta decay, and gamma decay. In alpha decay, alpha particles are emitted, as a result of quantum tunneling. These alpha particles consist of two protons and two neutrons, drawing similarities from the helium nuclei. In beta decay (specifically the negative form of beta decay), neutrons are converted to protons, emitting electrons and anti-neutrinos. In gamma decay, high energy photons, otherwise known as gamma rays, are emitted as high-energy protons or neutrons relax, similar to how electrons in atoms relax and emit photons. 
 
-Of these, there are 3 main kinds: alpha decay, beta decay, and gamma decay. 
-
-In alpha decay, alpha particles are emitted. These alpha particles consist of 2 protons and 2 neutrons, drawing simiilarities from the helium nuclei. 
-
-In beta decay, neutrons are converted to protons, emitting electrons and anti-neutrinos. 
-
-In gamma decay, high energy photons, or gamma rays, are emitted. 
-Decay, beta decay, alpha, gamma, bit of background in isotopes relation to decay
-
-
-Strontium-90 beta decays into Yttrium-90 with a half-life of 28.8 years, which with a half life of 64 hours, beta decays into either a grounded or excited state of Zirconium-90 depending on the energy of the electron being emitted. 
-
-
-which is stable. 
-
-Cobalt 60 beta decays into Nickel 60 which then gamma decays into (). 
-
-Polonium 210 alpha decays into the stable Lead 206 with a half life of 136 days
+Three different radioactive isotopes correspond to the different forms of radioactive decay: polonium-210 corresponds to alpha decay, strontium-90 corresponds to beta decay, cobalt-60 corresponds to gamma decay. Polonium-210 (half-life of 136 days) alpha decays into stable lead-206. Strontium-90 (half-life of 28.8 years) beta decays into yttrium-90 (half life of 64 hours), which then beta decays into either a grounded or excited state of Zirconium-90 depending on the energy of the electron being emitted. Cobalt-60 (half-life of 5.27 years) beta decays into Nickel 60 which then gamma decays. With three different forms of radiation, a geiger counter, the tool used to measure radioactivity by counting the number of ionic particles, can measure the radioactivity. 
+//add more detail on geiger counters
+//https://www.nrc.gov/reading-rm/basic-ref/students/science-101/what-is-a-geiger-counter.html
 
 = 2. Theory
 
-Inverse square relation to count and everything
+== 2a. Radiation and Distance: 
 
-Radiation and Distance: 
+An inverse square relation between observed radioactivity and distance from the source follows the equation:
 
-Carbon Dating: 
+#mitex(`
+A = \frac{c}{r^2} = c \cdot r^{-2}
+`) 
 
-Poisson had a relation that
+$A$ is radioactivity, $r$ is distance, and $c$ is an arbitrary constant. Linearizing the equation by taking the natural logarithm of both sides simplifies to the following equation: 
 
-bruh
+#mitex(`
+ln(A) = -2 \cdot ln(r) + ln(c) 
+`) 
 
+Where the relation forms a line with slope of $-2$ when plotting $ln(A)$ against $ln(r)$. This inverse square relation can be observed for beta and gamma radiation, but will not necessarily be observed in alpha decay, as alpha particles are massive and charged, meaning an increase in distance would introduce an amount of air particles that would shield the detector from reading the true radioactivity, massively reducing the reading from what was expected. 
+//add more detail
 
-Dating: 
+== 2b. Radioactive Dating: 
 
-Suppose two radioactive samples are created with the same initial activity, one at t=0 and the other at t=T.  We can write A0 = A1(t=0) = A2(t=T).  We can additionally write:
+//rewrite
+If two radioactive samples are created with the same initial activity with one at $t = 0$ and the other at $t = T$ where $t$ is time and $T$ is the difference in time between the creation of the two samples, the following equations can be extracted:  
 
-A1(t) = A0 e^(-lt)
+#mitex(`
+A_0 = A_1(t=0) = A_2(t=T)
+`)
 
-A2(t) = A0 e^(-l(t-T))
+#mitex(`
+A_1(t) = A_0 e^{-lt}
+`)
 
-We can take the ratio A2/A1 = e^(lT), then take the natural log of both sides, and replace l to get:
+#mitex(`
+A_2(t) = A_0 e^{-l(t-T)}
+`)
 
-$T = t1/2 / ln(2) * ln(A2/A1)$
+#mitex(`
+\frac {A_2} {A_1} = e^{lT}
+`)
 
-If we measure the activities of samples 1 & 2, and use 1925.3 days for t1/2 for Co-60, we can determine the number of days between the creation of samples 1 & 2.
+Taking the natural logarithm of both sides of the previous equation and replacing $l$ with the half-life term results in the following:
 
+#mitex(`
+T = \frac {t_{1/2}} {ln(2)} \cdot ln(\frac{A_2}{A_1})
+`)
+
+Measuring the radioactivities of the two samples and using 1925.3 days for the half-life of cobalt-60, the number of days between the creation of the samples can thus be determined.
 
 = 3. Experiment
-Two experiments were conducted, Once
-measuring the relationradioactivity as a function of distance, the other dating the () between cobalt-60 based on something
+
+Two separate experiments were conducted: one measuring the relation between radioactivity and distance for various radioactive decay types, one radioactive dating the time difference between the distant creation of two cobalt-60 samples. Before taking any geiger counter measurements, a background noise measurement was taken and subtracted from each measurement to correct for any ambient radioactivity.  
 
 == 3a. Effects of Distance
 
-//rewrite
-When people try to reduce their exposure to radioactivity, distance from the source is one of the most important factors. With no sources, take data to determine the level of background radiation.  Once this is complete, place a radioactive source on the top tray of the sample holder (distance = 4cm) and take data for one minute. Move the source down one step from the detector (an additional 1cm) and observe how the counts drop as a function of distance.  Repeat all the way down the sample holder.  If your counts drop below a statistically reasonable number, measure for more than a minute. Plot the counts (corrected for background) in an appropriate way to verify the 1/r2 relationship in your lab report and comment. Do this for a beta source and a gamma source. You should also do an alpha source (note, this needs to be placed label side down in the holder). The results for alpha are very different. Why?
+Prior to measurement, each sample was selected such that the time difference between creation and present was less than one half-life in order to allow sufficient radioactive measurement. The following procedure was performed for polonium-210 (alpha decay), strontium-90 (beta decay), and cobalt-60 (gamma decay): 
+
+A radioactive sample was placed on the top tray of the sample holder (4cm from the counter) and the data was taken for 60 seconds. The source was then lowered one step further from the detector, each step increasing the distance by 1cm and the data was taken again. This was repeated for each step all the way down the sample holder. If the count dropped below a statistically reasonable number, the time length for the measurement was extended.
+
 
 == 3b. Age of Co-60 samples
 
-//rewrite
-At this station we will verify the age of an older sample of Co-60.  While a half life measurement ideally has lots of measurements and a curve fit, estimating the age of a radioactive sample often involves just looking at the sample itself and a known standard.  Note that conceptually a carbon-14 dating is much the same as what we’ll do in this exercise
-
-We’ll use two Co-60 samples in this measurement, one from a long time ago, one more current, which acts as a standard.  Note that while both are marked as being 1.0mC, this is +/-5%, so given that there are two of them, the overall uncertainty is at least +/- 7.1%, before any other factors are considered. 
-
+Poisson statistics state that the standard error in the count measurement is equal to the square root of the actual measurement. Thus, to reduce proportional error, the time interval was extended to 300 seconds, the approximate length of 1 Clash Royale match (considering overtime). This would result in greater counts and proportionally smaller standard errors.Selecting two samples of cobalt-60 with statistically significant time difference between creation dates, both samples were measured at the top tray of the sample holder.  
+//specify dates
 
 = 4. Data, Results, and Analysis
 
+For the effects of distance, on radioactivity the linearized data was plotted: 
+
+#full_width_figure("distance_graph.svg", [Natural logarithm of radioactivity vs. natural logarithm of distance for strontium-90, cobalt-60, and polonium-210. The solid line represents the linear best fit to the experimental data points. The equation of the fit and the $R^2$ value are shown on the graph.]);
+
+The slopes for strontium-90, cobalt-60, and polonium-210 are $-2.37 plus.minus 0.03$, $-2.03 plus.minus 0.07$, $-3 plus.minus 1$ respectively. With an expected slope of -2 for the inverse square relation, the t'-scores are thus 12.3, 0.429, and 1.0 respectively. The t'-score for strontium indicates a strong disagreement, with the t'-score of 12.3 being far greater than 3. The t'-score for cobalt indicates an agreement within the uncertainty, 0.429 being less than 1. For polonium, although the error captures the expected value, yielding a t'-score of 1, the graph reveals a visually apparent non-linear fit, verfied by an $R^2$ value of 0.459. This indicates that a non-power fit would likely fit the data better. This is consistent with the theory that polonium-210, exhibiting alpha decay 
+
+For cobalt dating, poisson statistics indicates that the uncertainty in the count is equal to the square root. Factoring that into the calculation, the difference yields $ plus.minus "days"$ compared to the expected of approximately $"days"$.
+//finish
 
 #colbreak()
 
 = 5. Conclusion
+//finish
 
-Somethign
 #colbreak()
 
 = References
@@ -165,3 +181,5 @@ Somethign
 
 // https://openstax.org/books/university-physics-volume-3/pages/10-3-radioactive-decay
 // https://openstax.org/books/university-physics-volume-3/pages/10-4-nuclear-reactions
+// 
+// https://www.nrc.gov/reading-rm/basic-ref/students/science-101/what-is-a-geiger-counter.html
