@@ -23,11 +23,10 @@
 
 #let abstract = [
 //fixme
-Two experimental setups: one analyzing the effects distance on radioactivity for different decay types, one radioactive dating cobalt-60. 
-Activity was measured at varying distances for strontium-90, cobalt-60, and polonium-210. Linearizing the data by plotting ln(radioactivity) against ln(r) generates slopes of 
-of $-2.37 plus.minus 0.03$, $-2.03 plus.minus 0.07$, and $3 plus.minus 1$ respectively. Compared to the 
-slopes were calculated to be (), with a t'-score of (). 
+One experiment measured radioactivity at varying distances for different decay types, one experiment measured radioactivity for two samples of cobalt-60. 
+Activity was measured at varying distances for strontium-90, cobalt-60, and polonium-210. Linearizing the data by plotting ln(A) against ln(r) generates slopes of $-2.37 plus.minus 0.03$, $-2.03 plus.minus 0.07$, and $3 plus.minus 1$ respectively. Compared to the expected slope of -2, the t'-scores yield  (). 
 ];
+//finsih abstract
 
 #let names = ("Benjamin Liou", "Aiden Man", "Nathan Nguyen");
 
@@ -71,7 +70,7 @@ slopes were calculated to be (), with a t'-score of ().
 Radioactive decay is a process in nuclear physics where atomic nuclei decay into more stable configurations. There are 3 main types of decay: alpha decay, beta decay, and gamma decay. In alpha decay, alpha particles are emitted, as a result of quantum tunneling. These alpha particles consist of two protons and two neutrons, drawing similarities from the helium nuclei. In beta decay (specifically the negative form of beta decay), neutrons are converted to protons, emitting electrons and anti-neutrinos. In gamma decay, high energy photons, otherwise known as gamma rays, are emitted as high-energy protons or neutrons relax, similar to how electrons in atoms relax and emit photons. 
 
 Three different radioactive isotopes correspond to the different forms of radioactive decay: polonium-210 corresponds to alpha decay, strontium-90 corresponds to beta decay, cobalt-60 corresponds to gamma decay. Polonium-210 (half-life of 136 days) alpha decays into stable lead-206. Strontium-90 (half-life of 28.8 years) beta decays into yttrium-90 (half life of 64 hours), which then beta decays into either a grounded or excited state of Zirconium-90 depending on the energy of the electron being emitted. Cobalt-60 (half-life of 5.27 years) beta decays into Nickel 60 which then gamma decays. With three different forms of radiation, a geiger counter, the tool used to measure radioactivity by counting the number of ionic particles, can measure the radioactivity. 
-//add more detail on geiger counters
+//add more detail on geiger counters  
 //https://www.nrc.gov/reading-rm/basic-ref/students/science-101/what-is-a-geiger-counter.html
 
 = 2. Theory
@@ -90,13 +89,11 @@ $A$ is radioactivity, $r$ is distance, and $c$ is an arbitrary constant. Lineari
 ln(A) = -2 \cdot ln(r) + ln(c) 
 `) 
 
-Where the relation forms a line with slope of $-2$ when plotting $ln(A)$ against $ln(r)$. This inverse square relation can be observed for beta and gamma radiation, but will not necessarily be observed in alpha decay, as alpha particles are massive and charged, meaning an increase in distance would introduce an amount of air particles that would shield the detector from reading the true radioactivity, massively reducing the reading from what was expected. 
-//add more detail
+Where the relation forms a line with slope of $-2$ when plotting $ln(A)$ against $ln(r)$. This inverse square relation can be observed for beta and gamma radiation, but will not necessarily be observed in alpha decay. This is because alpha particles are massive and charged, meaning an increase in distance would introduce an amount of air particles that would shield the detector, massively reducing the reading from what would be expected. 
 
 == 2b. Radioactive Dating: 
 
-//rewrite
-If two radioactive samples are created with the same initial activity with one at $t = 0$ and the other at $t = T$ where $t$ is time and $T$ is the difference in time between the creation of the two samples, the following equations can be extracted:  
+If two radioactive samples are created with the same initial activity with one at $t = 0$ and the other at $t = T$ where $t$ is time and $T$ is the difference in time between the creation of the two samples, the following equations can be calculated:  
 
 #mitex(`
 A_0 = A_1(t=0) = A_2(t=T)
@@ -135,23 +132,21 @@ A radioactive sample was placed on the top tray of the sample holder (4cm from t
 
 == 3b. Age of Co-60 samples
 
-Poisson statistics state that the standard error in the count measurement is equal to the square root of the actual measurement. Thus, to reduce proportional error, the time interval was extended to 300 seconds, the approximate length of 1 Clash Royale match (considering overtime). This would result in greater counts and proportionally smaller standard errors.Selecting two samples of cobalt-60 with statistically significant time difference between creation dates, both samples were measured at the top tray of the sample holder.  
-//specify dates
+Poisson statistics state that the standard error in the count measurement is equal to the square root of the actual measurement. Thus, to reduce proportional error, the time interval was extended to 300 seconds, the approximate length of one Clash Royale match (considering overtime). This would result in greater counts and proportionally smaller errors. Selecting two samples of cobalt-60 with statistically significant time difference between creation dates, both samples were measured at the top tray of the sample holder. This specific experiment selected one sample created in May 2003, and another in March 2021. 
 
 = 4. Data, Results, and Analysis
 
-For the effects of distance, on radioactivity the linearized data was plotted: 
+For the experiment measuring the effects of distance on radioactivity, the linearized data with $ln(A)$ against $ln(r)$ was plotted. The slopes for each isotope are $-2.37 plus.minus 0.03$ for strontium-90, $-2.03 plus.minus 0.07$ for cobalt-60, and $-3 plus.minus 1$ for polonium-210. With an expected slope of -2 for the inverse square relation, the t'-scores are thus 12.3, 0.429, and 1.0 respectively. The t'-score for strontium indicates a strong disagreement with the expected value, with the t'-score of 12.3 being far greater than 3. The t'-score for cobalt indicates an agreement within the uncertainty, with 0.429 being less than 1. For polonium, although the error captures the expected value and yields a t'-score of 1.0, the graph reveals that a non-power fit would likely relate radioactivity and distance better. The error bar of every data point on the graph does not capture the line, and the $R^2$ has a low value of 0.459, supporting the distinction between this data and an inverse square relation. This is consistent with the theory that polonium-210, exhibiting alpha decay, would not follow the same inverse square relation as strontium-90 or cobalt-60, which each exhibit beta and gamma decay respectively. 
 
 #full_width_figure("distance_graph.svg", [Natural logarithm of radioactivity vs. natural logarithm of distance for strontium-90, cobalt-60, and polonium-210. The solid line represents the linear best fit to the experimental data points. The equation of the fit and the $R^2$ value are shown on the graph.]);
 
-The slopes for strontium-90, cobalt-60, and polonium-210 are $-2.37 plus.minus 0.03$, $-2.03 plus.minus 0.07$, $-3 plus.minus 1$ respectively. With an expected slope of -2 for the inverse square relation, the t'-scores are thus 12.3, 0.429, and 1.0 respectively. The t'-score for strontium indicates a strong disagreement, with the t'-score of 12.3 being far greater than 3. The t'-score for cobalt indicates an agreement within the uncertainty, 0.429 being less than 1. For polonium, although the error captures the expected value, yielding a t'-score of 1, the graph reveals a visually apparent non-linear fit, verfied by an $R^2$ value of 0.459. This indicates that a non-power fit would likely fit the data better. This is consistent with the theory that polonium-210, exhibiting alpha decay 
-
-For cobalt dating, poisson statistics indicates that the uncertainty in the count is equal to the square root. Factoring that into the calculation, the difference yields $ plus.minus "days"$ compared to the expected of approximately $"days"$.
-//finish
+For cobalt dating, poisson statistics indicates that the uncertainty in the count is equal to the square root. Considering this, the radioactivity readings for the May 2003 sample read $2300 plus.minus 50$ with approximately 2.17% error, and for the March 2021 sample $11900 plus.minus 100$ with approximately 0.840% error. Considering error propogation with a 5% systematic error in each sample and the poisson statistic uncertainty, the percent error gets compounded to approximately 7.44%. Thus, performing the calculation and applying error propogation yields a time difference of $4600 plus.minus 300 "days"$ between the two samples. Comparing this to the expected value of approximately $6514 "days"$, determined by calculating the difference between the May 1st, 2003 and March 1st, 2021, the t'-score yields 6.38, signifying disagreement between the data and the expected value.
 
 #colbreak()
 
 = 5. Conclusion
+
+//idk wtf to put about the error analysis for the dating. 
 //finish
 
 #colbreak()
@@ -165,21 +160,46 @@ For cobalt dating, poisson statistics indicates that the uncertainty in the coun
 #set par(hanging-indent: 2em)
 
 #reference_entry(
-  "https://physics.nist.gov/PhysRefData/ASD/levels_form.html",
-  "NIST Atomic Spectra Database Levels Form",
-  "National Institute of Standards and Technology"
+  "https://www.bfs.de/EN/topics/ion/effect/radioactive-materials/polonium/polonium_node.html",
+  "Polonium-210",
+  "Bundesamt für Strahlenschutz"
+)
+
+#reference_entry(
+  "https://foothillcollege.instructure.com/courses/32770/assignments/1007409?module_item_id=2917884",
+  "Radioactive Playground",
+  "David Marasco, Foothill College"
+)
+
+#reference_entry(
+  "https://openstax.org/books/university-physics-volume-3/pages/10-3-radioactive-decay",
+  "Radioactive Decay",
+  "Openstax"
+)
+
+#reference_entry(
+  "https://openstax.org/books/university-physics-volume-3/pages/10-4-nuclear-reactions",
+  "Nuclear Reactions",
+  "Openstax"
+)
+
+#reference_entry(
+  "https://www.sciencedirect.com/topics/earth-and-planetary-sciences/cobalt-60",
+  "Cobalt 60",
+  "Science Direct"
+)
+
+#reference_entry(
+  "https://www.sciencedirect.com/topics/physics-and-astronomy/strontium-90",
+  "Strontium 90",
+  "Science Direct"
+)
+
+#reference_entry(
+  "https://www.energy.gov/science/doe-explainsradioactivity",
+  "DOE Explains...Radioactivity",
+  "U.S. Department of Energy"
 )
 
 
-// https://www.energy.gov/science/doe-explainsradioactivity
 
-// https://www.cdc.gov/radiation-emergencies/hcp/isotopes/strontium-90.html
-// https://www.bfs.de/EN/topics/ion/effect/radioactive-materials/polonium/polonium_node.html
-// https://www.sciencedirect.com/topics/physics-and-astronomy/strontium-90#:~:text=2.1.&text=Strontium%2D90%20is%20an%20unstable,its%20daughter%20nucleus%2C%2090Y.
-
-// https://www.sciencedirect.com/topics/earth-and-planetary-sciences/cobalt-60#:~:text=The%20atomic%20number%20(number%20of%20protons%20in,lines%20of%20cobalt%2D60%20(1.17%20and%201.33%20MeV).
-
-// https://openstax.org/books/university-physics-volume-3/pages/10-3-radioactive-decay
-// https://openstax.org/books/university-physics-volume-3/pages/10-4-nuclear-reactions
-// 
-// https://www.nrc.gov/reading-rm/basic-ref/students/science-101/what-is-a-geiger-counter.html
