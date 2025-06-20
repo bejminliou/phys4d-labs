@@ -22,11 +22,8 @@
 #let title = [Lab 7: Radioactive Playground];
 
 #let abstract = [
-//fixme
-Radioactivity $A$ was plotted against distance $r$ with a log-log plot for a gamma, beta, and alpha particle source. For the gamma source of cobalt-60, radiation intensity decreased with distance as predicted by the inverse square law, showing a slope of $-2.03 plus.minus 0.07$ and a t'-score of $0.429$. The beta source of strontium-90 showed a steeper slope of $-2.37 plus.minus 0.03$ and a t'-score of $12.3$, indicating strong disagreement with the inverse square law due to experimental error. The alpha source of polonium-210 did not follow the inverse square law, with a slope of $-3 plus.minus 1$, matching the behavior of alpha particles. The age of the cobalt-60 sample was estimated to be $4600 plus.minus 300$ days based on half-life measurements. This value deviated from the expected value with a t'-score of $6.38$, suggesting potential errors.
-
+Radioactivity $A$ was plotted against distance $r$ in a linearized graph, plotting $ln(A)$ against $ln(r)$. This was conducted for gamma, beta, and alpha decay sources. The gamma decay source, cobalt-60, yielded a slope of $-2.03 plus.minus 0.07$ and a t'-score of $0.429$, verifying the theory that radiation intensity decreases with distance as by the inverse square law. The beta decay source, strontium-90, yielded a slope of $-2.37 plus.minus 0.03$ and a t'-score of $12.3$, indicating strong disagreement with the inverse square law, suggesting potential sources of error. The alpha decay source, polonium-210, yielded a slope of $-3 plus.minus 1$ that captures the expected value with a t'-score of 1.0. However, the low $R^2$ value of 0.459 and inconsistency of point locations and vertical error bar sizes relative to the linear fit imply that the source does not follow the inverse square law, reflecting the expected behavior of alpha particles. The radioactive count measurements of cobalt-60 samples dated to May 2003 and March 2021 were used to determine the difference in age between the two samples. The difference was calculated to be $4600 plus.minus 300$ days, which deviated from the expected value with a t'-score of $6.38$, also suggesting potential sources of error.
 ];
-//finsih abstract
 
 #let names = ("Benjamin Liou", "Aiden Man", "Nathan Nguyen");
 
