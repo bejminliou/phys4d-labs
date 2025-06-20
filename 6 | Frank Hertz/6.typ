@@ -170,9 +170,6 @@ The t'-scores for argon comparing the data to the lowest energy levels show agre
 
 To improve data collection for the neon experimental setup, the fine-tuning on the oscilloscope could be refined such that the visualizer contains at least 4 peaks and valleys. This could further be improved by using more specific methods of assigning settings in the circuit setup, making data collection more consistent and robust. 
 
-
-#colbreak()
-
 = References
 
 #let reference_entry(url, title, source) = {
