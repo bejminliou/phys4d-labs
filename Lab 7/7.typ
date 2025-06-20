@@ -146,6 +146,10 @@ For cobalt dating, poisson statistics indicates that the uncertainty in the coun
 
 = 5. Conclusion
 
+The t'-score of cobalt-60 shows agreement within the uncertainty, verifying the inverse square relation between observed radioactivity and distance from the source for gamma particles. However, the t'-score of strontium-90 signifies inconclusiveness and disagreement with the inverse square relation for beta particles, when it should be in agreement. This could be due to detector miscalibration after years of laboratory use. For polonium-210, its non-linear graph indicates a poor fit to the inverse square relation, which is consistent with the behavior of alpha particles. Despite the potential errors, the experiment demonstrates the effect of distance on observed radioactivity.
+
+The t'-score from cobalt-60 dating analysis shows significant disagreement between the sample's estimated age and actual age. This could be due to detector miscalibration, resulting in an underestimation of the sample's age. This experiment shows how measured and expected half-life can be used to estimate the age of a given sample.
+
 //idk wtf to put about the error analysis for the dating. 
 //finish
 
