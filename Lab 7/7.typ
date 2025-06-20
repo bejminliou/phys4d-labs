@@ -22,7 +22,7 @@
 #let title = [Lab 7: Radioactive Playground];
 
 #let abstract = [
-Radioactivity $A$ was plotted against distance $r$ in a linearized graph, plotting $ln(A)$ against $ln(r)$. This was conducted for gamma, beta, and alpha decay sources. The gamma decay source, cobalt-60, yielded a slope of $-2.03 plus.minus 0.07$ and a t'-score of $0.429$, verifying the theory that radiation intensity decreases with distance as by the inverse square law. The beta decay source, strontium-90, yielded a slope of $-2.37 plus.minus 0.03$ and a t'-score of $12.3$, indicating strong disagreement with the inverse square law, suggesting potential sources of error. The alpha decay source, polonium-210, yielded a slope of $-3 plus.minus 1$ that captures the expected value with a t'-score of 1.0. However, the low $R^2$ value of 0.459 and inconsistency of point locations and vertical error bar sizes relative to the linear fit imply that the source does not follow the inverse square law, reflecting the expected behavior of alpha particles. The radioactive count measurements of cobalt-60 samples dated to May 2003 and March 2021 were used to determine the difference in age between the two samples. The difference was calculated to be $4600 plus.minus 300$ days, which deviated from the expected value with a t'-score of $6.38$, also suggesting potential sources of error.
+Radioactivity $A$ was plotted against distance $r$ in a linearized graph, plotting $ln(A)$ against $ln(r)$. This was conducted for gamma, beta, and alpha decay sources. The gamma decay source, cobalt-60, yielded a slope of $-2.03 plus.minus 0.07$ and a t'-score of $0.429$, verifying the theory that radiation intensity decreases with distance as by the inverse square law. The beta decay source, strontium-90, yielded a slope of $-2.37 plus.minus 0.03$ and a t'-score of $12.3$, indicating strong disagreement with the inverse square law, suggesting potential sources of error. The alpha decay source, polonium-210, yielded a slope of $-3 plus.minus 1$ that captures the expected value with a t'-score of 1.0. However, the low $R^2$ value of 0.459 and inconsistency of point locations and vertical error bar sizes relative to the linear fit imply that the source does not follow the inverse square law, reflecting the expected behavior of alpha particles. The radioactive count measurements of cobalt-60 samples dated May 2003 and March 2021 were used to determine the difference in age between the two samples. The difference was calculated to be $4600 plus.minus 300$ days, which deviated from the expected value with a t'-score of $6.38$, also suggesting potential sources of error.
 ];
 
 #let names = ("Benjamin Liou", "Aiden Man", "Nathan Nguyen");
@@ -64,9 +64,9 @@ Radioactivity $A$ was plotted against distance $r$ in a linearized graph, plotti
 
 = 1. Background
 
-Radioactive decay is a process in nuclear physics where atomic nuclei decay into more stable configurations. There are 3 main types of decay: alpha decay, beta decay, and gamma decay. In alpha decay, alpha particles are emitted, as a result of quantum tunneling. These alpha particles consist of two protons and two neutrons, drawing similarities from the helium nuclei. In beta decay (specifically the negative form of beta decay), neutrons are converted to protons, emitting electrons and anti-neutrinos. In gamma decay, high energy photons, otherwise known as gamma rays, are emitted as high-energy protons or neutrons relax, similar to how electrons in atoms relax and emit photons. 
+Radioactive decay is a process in nuclear physics where atomic nuclei decay into more stable configurations. There are 3 main types of decay: alpha decay, beta decay, and gamma decay. In alpha decay, alpha particles are emitted, as a result of quantum tunneling. These alpha particles consist of two protons and two neutrons, drawing similarities from the helium nuclei. In beta decay (specifically the negative form of beta decay), neutrons are converted to protons, emitting electrons and anti-neutrinos. In gamma decay, high-energy photons, otherwise known as gamma rays, are emitted as high-energy protons or neutrons relax, similar to how electrons in atoms relax and emit photons. 
 
-Three different radioactive isotopes correspond to the different forms of radioactive decay: polonium-210 corresponds to alpha decay, strontium-90 corresponds to beta decay, cobalt-60 corresponds to gamma decay. Polonium-210 (half-life of 136 days) alpha decays into stable lead-206. Strontium-90 (half-life of 28.8 years) beta decays into yttrium-90 (half life of 64 hours), which then beta decays into either a grounded or excited state of Zirconium-90 depending on the energy of the electron being emitted. Cobalt-60 (half-life of 5.27 years) beta decays into Nickel 60 which then gamma decays. With three different forms of radiation, a geiger counter, the tool used to measure radioactivity by counting the number of ionic particles, can measure the radioactivity. 
+Three different radioactive isotopes correspond to the different forms of radioactive decay: polonium-210 corresponds to alpha decay, strontium-90 corresponds to beta decay, and cobalt-60 corresponds to gamma decay. Polonium-210 (half-life of 136 days) alpha decays into stable lead-206. Strontium-90 (half-life of 28.8 years) beta decays into yttrium-90 (half-life of 64 hours), which then beta decays into either a grounded or excited state of Zirconium-90 depending on the energy of the electron being emitted. Cobalt-60 (half-life of 5.27 years) beta decays into Nickel 60 which then gamma decays. With three different forms of radiation, a Geiger counter can be used to measure radioactivity by counting the number of ionic particles.
 //add more detail on geiger counters  
 //https://www.nrc.gov/reading-rm/basic-ref/students/science-101/what-is-a-geiger-counter.html
 
@@ -80,17 +80,17 @@ An inverse square relation between observed radioactivity and distance from the 
 A = \frac{c}{r^2} = c \cdot r^{-2}
 `) 
 
-$A$ is radioactivity, $r$ is distance, and $c$ is an arbitrary constant. Linearizing the equation by taking the natural logarithm of both sides simplifies to the following equation: 
+where $A$ is radioactivity, $r$ is distance, and $c$ is an arbitrary constant. Linearizing the equation by taking the natural logarithm of both sides simplifies to the following equation: 
 
 #mitex(`
 ln(A) = -2 \cdot ln(r) + ln(c) 
 `) 
 
-Where the relation forms a line with slope of $-2$ when plotting $ln(A)$ against $ln(r)$. This inverse square relation can be observed for beta and gamma radiation, but will not necessarily be observed in alpha decay. This is because alpha particles are massive and charged, meaning an increase in distance would introduce an amount of air particles that would shield the detector, massively reducing the reading from what would be expected. 
+Where the relation forms a line with slope of $-2$ when plotting $ln(A)$ against $ln(r)$. This inverse square relation can be observed for beta and gamma radiation, but will not necessarily be observed in alpha decay. This is because alpha particles are massive and charged, meaning an increase in distance would introduce an amount of air particles that would shield the detector and greatly reduce the reading from what would be expected. 
 
 == 2b. Radioactive Dating: 
 
-If two radioactive samples are created with the same initial activity with one at $t = 0$ and the other at $t = T$ where $t$ is time and $T$ is the difference in time between the creation of the two samples, the following equations can be calculated:  
+If two radioactive samples are created with the same initial activity, with one at $t = 0$ and the other at $t = T$, where $t$ is time and $T$ is the difference in time between the creation of the two samples, the following equations can be calculated:  
 
 #mitex(`
 A_0 = A_1(t=0) = A_2(t=T)
@@ -118,7 +118,7 @@ Measuring the radioactivities of the two samples and using 1925.3 days for the h
 
 = 3. Experiment
 
-Two separate experiments were conducted: one measuring the relation between radioactivity and distance for various radioactive decay types, one radioactive dating the time difference between the distant creation of two cobalt-60 samples. Before taking any geiger counter measurements, a background noise measurement was taken and subtracted from each measurement to correct for any ambient radioactivity.  
+Two separate experiments were conducted: one measuring the relation between radioactivity and distance for various radioactive decay types, and one radioactive dating the time difference between the distant creation of two cobalt-60 samples. Before taking any Geiger counter measurements, a background noise measurement was taken and subtracted from each measurement to correct for any ambient radioactivity.  
 
 == 3a. Effects of Distance
 
@@ -137,7 +137,7 @@ For the experiment measuring the effects of distance on radioactivity, the linea
 
 #full_width_figure("distance_graph.svg", [Natural logarithm of radioactivity vs. natural logarithm of distance for strontium-90, cobalt-60, and polonium-210. The solid line represents the linear best fit to the experimental data points. The equation of the fit and the $R^2$ value are shown on the graph.]);
 
-For cobalt dating, poisson statistics indicates that the uncertainty in the count is equal to the square root. Considering this, the radioactivity readings for the May 2003 sample read $2300 plus.minus 50$ with approximately 2.17% error, and for the March 2021 sample $11900 plus.minus 100$ with approximately 0.840% error. Considering error propogation with a 5% systematic error in each sample and the poisson statistic uncertainty, the percent error gets compounded to approximately 7.44%. Thus, performing the calculation and applying error propogation yields a time difference of $4600 plus.minus 300 "days"$ between the two samples. Comparing this to the expected value of approximately $6514 "days"$, determined by calculating the difference between the May 1st, 2003 and March 1st, 2021, the t'-score yields 6.38, signifying disagreement between the data and the expected value.
+For cobalt dating, Poisson statistics indicate that the uncertainty in the count is equal to the square root. Considering this, the radioactivity readings for the May 2003 sample read $2300 plus.minus 50$ with approximately 2.17% error, and for the March 2021 sample $11900 plus.minus 100$ with approximately 0.840% error. Considering error propagation with a 5% systematic error in each sample and the Poisson statistic uncertainty, the percent error gets compounded to approximately 7.44%. Thus, performing the calculation and applying error propagation yields a time difference of $4600 plus.minus 300 "days"$ between the two samples. Comparing this to the expected value of approximately $6514 "days"$, determined by calculating the difference between the May 1st, 2003 and March 1st, 2021, the t'-score yields 6.38, signifying disagreement between the data and the expected value.
 
 #colbreak()
 
