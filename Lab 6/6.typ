@@ -69,7 +69,7 @@ In 1914, James Franck and Gustav Hertz confirmed Bohr's theorized quantized ener
 
 = 2. Theory
 
-Plotting observed current against voltage for this experiment will yield a series of peaks and valleys, where the spacing between peaks (local maxima) and between valleys (local minima) correspond to the excitation energy of the interacting gas. A linear regression performed on the plot of the voltage at these peak voltages and the peak numbers (the order in which peaks occur) will provide an average voltage difference between peaks as a slope:
+Plotting observed current (a representation of electron energy) against grid voltage for this experiment will yield a series of peaks and valleys, where the spacing between peaks (local maxima) and between valleys (local minima) correspond to the excitation energy of the interacting gas. A linear regression performed on the plot of the voltage at these peak voltages and the peak numbers (the order in which peaks occur) will provide a weighted average voltage difference between peaks as a slope:
 
 #mitex(`
 V_p =  c \cdot n + b
@@ -81,14 +81,14 @@ $V_p$ is the peak voltage, $n$ is the peak number, and $c$ is the slope, represe
 V_v =  c \cdot n + b
 `)
 
-By measuring the energy of the electrons in electron-volts (eV), the induced kinetic energy of each electron is equal to 1 electron-volt per volt measured. This means the value of the average voltage difference between peaks directly corresponds to the average energy difference between peaks in electron-volts. Thus, multiplying the elementary charge by the slope c yields the equation: 
+By measuring the energy of the electrons in electron-volts (eV), the induced kinetic energy of each electron is equal to 1 electron-volt per volt measured. This means the value of the weighted average voltage difference between peaks directly corresponds to the average energy difference between peaks in electron-volts. Thus, multiplying the elementary charge by the slope c yields the equation: 
 
 #mitex(`
 K_e = 1e \cdot c
 `)
 
 $K_e$ represents the excitaiton in energy in electron-volts. 
-Mismatch between experimental and expected values for $K_e$ may occur due to the atom's cross-section (odds of interacting with an electron). At the energies examined in the Frank-Hertz experiment, the cross-sections for the 4.9eV excitation are about ten times larger than those of the 4.7eV excitation. Thus, there is a greater likelihood of electrons achieving the 4.9eV inelastic collision as opposed to the 4.7eV counterpart.
+Mismatch between experimental and expected values for $K_e$ may occur due to the atom's cross-section (odds of interacting with an electron). At the energies examined in the original Frank-Hertz experiment, the cross-sections for the 4.9eV excitation are about ten times larger than those of the 4.7eV excitation. Thus, there is a greater likelihood of electrons achieving the 4.9eV inelastic collision as opposed to the 4.7eV counterpart.
 
 = 3. Experiment
 Two experimental setups were used for analyzing argon and neon separately.
@@ -168,7 +168,7 @@ For neon, the strongest agreement for the peak values was exhibited at $2s^2 2p^
 
 The t'-scores for argon comparing the data to the lowest energy levels show agreement within the uncertainty, verifying the results of the Franck-Hertz experiment and Bohr's theory of quantized energy levels. However, the t'-scores for neon comparing the data to the lowest energy levels signify inconclusiveness and disagreement. Though the influence of atomic cross-sections and collision likelihood for certain excitation energy levels could apply to neon, it would still imply that the values should reflect those still in the lower energy levels. However, the experimental values for neon agree strongest with energy levels, far above the lowest energy configurations. In further analyzing the neon data, the t'-scores could be attributed to the deficit in the number of data points. The neon dataset consists of 3 peaks and 3 valleys, constructing each line of best fit from only 3 points. This data set contains approximately half of those in the argon dataset, with 6 peaks and 5 valleys. This shortage in data can allow coincidentally linear data to pose small uncertainties on incorrect slope values, massively skewing the resulting t'-score toward disagreement.  
 
-To improve data collection for the neon experimental setup, the fine-tuning on the oscilloscope could be refined such that the visualizer contains at least 4 peaks and valleys. This could further be improved by using more specific methods of assigning settings, making data collection more consistent and robust. 
+To improve data collection for the neon experimental setup, the fine-tuning on the oscilloscope could be refined such that the visualizer contains at least 4 peaks and valleys. This could further be improved by using more specific methods of assigning settings in the circuit setup, making data collection more consistent and robust. 
 
 
 #colbreak()
