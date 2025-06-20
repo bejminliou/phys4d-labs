@@ -23,8 +23,8 @@
 
 #let abstract = [
 //fixme
-One experiment measured radioactivity at varying distances for different decay types, one experiment measured radioactivity for two samples of cobalt-60. 
-Activity was measured at varying distances for strontium-90, cobalt-60, and polonium-210. Linearizing the data by plotting ln(A) against ln(r) generates slopes of $-2.37 plus.minus 0.03$, $-2.03 plus.minus 0.07$, and $3 plus.minus 1$ respectively. Compared to the expected slope of -2, the t'-scores yield  (). 
+Radioactivity $A$ was plotted against distance $r$ with a log-log plot for a gamma, beta, and alpha particle source. For the gamma source of cobalt-60, radiation intensity decreased with distance as predicted by the inverse square law, showing a slope of $-2.03 plus.minus 0.07$ and a t'-score of $0.429$. The beta source of strontium-90 showed a steeper slope of $-2.37 plus.minus 0.03$ and a t'-score of $12.3$, indicating strong disagreement with the inverse square law due to experimental error. The alpha source of polonium-210 did not follow the inverse square law, with a slope of $-3 plus.minus 1$, matching the behavior of alpha particles. The age of the cobalt-60 sample was estimated to be $4600 plus.minus 300$ days based on half-life measurements. This value deviated from the expected value with a t'-score of $6.38$, suggesting potential errors.
+
 ];
 //finsih abstract
 
