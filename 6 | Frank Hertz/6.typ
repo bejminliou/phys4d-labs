@@ -87,7 +87,7 @@ By measuring the energy of the electrons in electron-volts (eV), the induced kin
 K_e = 1e \cdot c
 `)
 
-$K_e$ represents the excitaiton in energy in electron-volts. 
+$K_e$ represents the excitation in energy in electron-volts. 
 Mismatch between experimental and expected values for $K_e$ may occur due to the atom's cross-section (odds of interacting with an electron). At the energies examined in the original Frank-Hertz experiment, the cross-sections for the 4.9eV excitation are about ten times larger than those of the 4.7eV excitation. Thus, there is a greater likelihood of electrons achieving the 4.9eV inelastic collision as opposed to the 4.7eV counterpart.
 
 = 3. Experiment
@@ -95,7 +95,7 @@ Two experimental setups were used for analyzing argon and neon separately.
 
 == 3a. Argon
 
-The entire setup was in a self-contained box, where the left side was a pair of meters that measure current and voltage and the right side was an array of knobs and switches. On the top row of dials and switches, the manual/auto switch was set to manual, the filament voltage dial set to $3.5V$ and the current multiplier set to $10^"-9"$. The second row of switches and dials controlled the various voltages in the circuit, with the far left switch controlling the voltage being set. Starting with the switch positioned to the left, this first voltage (to move the electrons away from the filament) was set to 1.5 volts. The switch in the middle position sets the unfortunately named "retarding voltage," and was set to 7.5 volts. The switch in the right position controls the grid voltage, otherwise known as the accelerating voltage. 
+The entire setup was in a self-contained box, where the left side was a pair of meters that measure current and voltage and the right side was an array of knobs and switches. On the top row of dials and switches, the manual/auto switch was set to manual, the filament voltage dial set to $3.5V$, and the current multiplier set to $10^"-9"$. The second row of switches and dials controlled the various voltages in the circuit, with the far left switch controlling the voltage being set. Starting with the switch positioned to the left, this first voltage (to move the electrons away from the filament) was set to 1.5 volts. The switch in the middle position sets the unfortunately named "retarding voltage," and was set to 7.5 volts. The switch in the right position controls the grid voltage, otherwise known as the accelerating voltage. 
 
 The procedure for measuring currents at varying grid voltages was as follows: the grid voltage was increased at two-volt increments from 0 volts, with each point recorded as a pair of currents and voltages up to 80 volts. Before taking data, the electronics must be allowed to warm up. When adjusting the grid voltage, a 5-second wait time was allowed for the current to settle. The current multiplier was also adjusted throughout the experiment to account for the wide range of current readings. 
 
@@ -160,7 +160,7 @@ The lowest neon configurations are as follows (with $2s^2 2p^6$ at 0eV):
   [$2s^2 2p^5 (""^"2" P degree _"1/2" ) 3s$], [0 \ 1], [16.715 \ 16.848]   
 )
 
-For argon, the strongest agreement for the peak values was exhibited in $3s^2 3p^5 (""^"2" P degree _"1/2" )4s$ for J = 0 with a level of 11.723eV. The strongest agreement for the valley values was exhibited in $3s^2 3p^5 (""^"2"P degree _"3/2") 4s$ for J = 1 with a level of 11.624eV. The lowest excitaiton level for argon 11.548eV, resulting in a t'-score of 0.507 with the peaks and 0.260 with the valleys. Both of these t'-scores indicate agreement within the standard error between the data and this expected value. 
+For argon, the strongest agreement for the peak values was exhibited in $3s^2 3p^5 (""^"2" P degree _"1/2" )4s$ for J = 0 with a level of 11.723eV. The strongest agreement for the valley values was exhibited in $3s^2 3p^5 (""^"2"P degree _"3/2") 4s$ for J = 1 with a level of 11.624eV. The lowest excitation level for argon 11.548eV, resulting in a t'-score of 0.507 with the peaks and 0.260 with the valleys. Both of these t'-scores indicate agreement within the standard error between the data and this expected value. 
 
 For neon, the strongest agreement for the peak values was exhibited at $2s^2 2p^5 (""^2 P degree _"1/2") 20d$ and J = 1, with a level 21.627 eV. The strongest agreement for the valley values was exhibited at $2s^2 2p^5 (""^2 P degree _"3/2") 3d$ and J = 1, with a level of 20.025 eV. The lowest excitation level for neon is 16.619eV, resulting in a t'-score of 1.69 for the peaks and 51.81 for the valleys. The t'-score from the peaks signifies neither agreement nor disagreement, resulting in an inconclusive comparison. The t'-score of 51.81 signifies an extreme level of disagreement.  
 
